@@ -3,3 +3,10 @@ ansible -i inventory all -m "shell" -a "touch devopsclass"
 ansible -i inventory all -m "shell" -a "nproc"
 
 ansible -i inventory all -m "shell" -a "df"
+
+To run ansible playbook
+ansible-playbook -i inventory first-playbook.yml
+
+To run ansible playbook with details
+ansible-playbook -v -i inventory first-playbook.yml (v = verbosity)
+ansible-playbook -vvv -i inventory first-playbook.yml (vvv = highest verbosity)
