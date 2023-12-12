@@ -1,0 +1,5 @@
+ansible -i inventory all -m "shell" -a "touch devopsclass"
+
+ansible -i inventory all -m "shell" -a "nproc"
+
+ansible -i inventory all -m "shell" -a "df"
