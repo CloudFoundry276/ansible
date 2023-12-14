@@ -1,0 +1,22 @@
+---
+- name: copy, unzip & install software(s) and/or service(s)
+  hosts: all
+  become: true
+  tasks:
+    - name: copy software/service
+      copy:
+        src: /home/ec2-user/prometheus-2.48.1.linux-amd64.tar.gz
+        dest: /home/ec2-user/prometheus-2.48.1.linux-amd64.tar.gz
+    - name: unzip package
+      unarchive:
+        src: /home/ec2-user/prometheus-2.48.1.linux-amd64.tar.gz
+        dest: /home/ec2-user/
+        remote_src: yes
+    - name: template module
+      template:
+        src: /home/ec2-user/prometheus.service.j2
+        dest: /etc/systemd/system/prometheus.service
+    - name: start prometheus service
+      service:
+        name: prometheus.service
+        state: started
