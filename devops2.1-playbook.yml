@@ -1,0 +1,13 @@
+---
+- name: git installation
+  hosts: all
+  become: true
+  tasks:
+    - name: update linux
+      command: sudo dnf update
+    - name: search git
+      command: sudo dnf search git
+    - name: install git
+      dnf:
+        name: git
+        state: latest
