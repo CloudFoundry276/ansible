@@ -1,0 +1,9 @@
+---
+- name: copy file(s) and/or software(s)
+  hosts: all
+  become: true
+  tasks:
+    - name: copy file/software
+      copy:
+        src: /home/ec2-user/prometheus-2.48.1.linux-amd64.tar.gz
+        dest: /home/ec2-user/prometheus-2.48.1.linux-amd64.tar.gz
