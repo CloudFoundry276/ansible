@@ -1,0 +1,14 @@
+---
+- name: install multiple softwares
+  hosts: all
+  become: true
+  tasks:
+    - name: install multiple softwares
+      yum:
+        name: "{{ item }}"
+        state: latest
+      loop:
+        - git
+        - docker
+        - python
+        - java
