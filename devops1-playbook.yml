@@ -1,0 +1,31 @@
+---
+- name: jenkins installation
+  hosts: all
+  gather_facts: false
+  become: true
+  tasks:
+    - name: update linux
+      command: sudo yum update
+    - name: add jenkins repo
+      get_url:
+        url: https://pkg.jenkins.io/redhat-stable/jenkins.repo
+        dest: /etc/yum.repos.d/jenkins.repo
+    - name: import key file from jenkins ci
+      rpm_key:
+        key: https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+        state: present
+    - name: upgrade linux
+      command: sudo yum upgrade
+    - name: install java
+      dnf:
+        name: java-17-amazon-corretto
+        state: latest
+    - name: install jenkins
+      yum:
+        name: jenkins
+        state: present
+    - name: enable & start jenkins
+      service:
+        name: jenkins
+        enabled: true
+        state: started
