@@ -1,0 +1,11 @@
+---
+- name: variable demo using varfile
+  hosts: all
+  become: true
+  vars_files:
+    - varfile
+  tasks:
+    - name: create user
+      user:
+        name: "{{ name }}"
+        state: present
