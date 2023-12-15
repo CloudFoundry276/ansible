@@ -16,3 +16,27 @@ ansible-playbook -vvv -i inventory first-playbook.yml (vvv = highest verbosity)
 ansible -i inventory all -m ping
 
 ansible -i inventory all -a hostname
+
+----------------------------------------------------------------------------------------------
+
+To create ansible role(s)
+ansible-galaxt init rolename
+
+-----------------------------------------------------------------------------------------------
+
+ANSIBLE VAULT
+
+To create file(s)
+ansible-vault create filename.yml
+
+To encrypt unencrypted file(s)
+ansible-vault encrypt filename.yml
+
+To edit encrypted file(s)
+ansible-vault edit filename.yml
+
+To view encrypted file(s)
+ansible-vault view filename.yml
+
+To decrypt encrypted file(s) during runtime
+ansible-playbook playbook_name.yml --ask-vault-pass
