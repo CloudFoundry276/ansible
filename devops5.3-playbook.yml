@@ -1,0 +1,21 @@
+---
+- name: install & setup apache server using handler
+  hosts: all
+  become: true
+  tasks:
+    - name: update linux system
+      command: sudo dnf update
+    - name: checking apache service
+      command: sudo dnf list | grep httpd
+    - name: installing apache
+      dnf:
+        name: httpd.x86_64
+        state: latest
+      notify:
+        - Enable & Start Apache
+  handlers:
+    - name: Enable & Start Apache
+      service:
+        name: httpd
+        enabled: true
+        state: started
