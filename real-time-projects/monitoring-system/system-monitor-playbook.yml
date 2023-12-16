@@ -1,6 +1,6 @@
 ---
 - name: prometheus alert amnager
-  hosts: alertmanager
+  hosts: alert_manager
   become: true
   roles:
-    - alertmanager
+    - alert_manager
