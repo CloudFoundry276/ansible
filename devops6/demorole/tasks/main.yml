@@ -1,2 +1,6 @@
 ---
 # tasks file for demorole
+- name: create new user
+  include_tasks: user.yml
+- name: install apache software
+  include_tasks: apache-software.yml
