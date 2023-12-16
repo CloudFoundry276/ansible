@@ -1,0 +1,11 @@
+---
+- name: check date of target system
+  hosts: all
+  become: true
+  tasks:
+    - name: register date & check
+      shell: date
+      register: outdt
+    - name: debug message
+      debug:
+        var: outdt

@@ -1,0 +1,11 @@
+---
+- name: check hostname of target system
+  hosts: all
+  become: true
+  tasks:
+    - name: check hostname
+      shell: hostname
+      register: checkhost
+    - name: debug message
+      debug:
+        var: checkhost

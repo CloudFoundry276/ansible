@@ -1,0 +1,11 @@
+---
+- name: check ip address of target system
+  hosts: all
+  become: true
+  tasks:
+    - name: check hostname
+      shell: ifconfig
+      register: checkip
+    - name: debug message
+      debug:
+        var: checkip
