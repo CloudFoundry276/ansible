@@ -69,6 +69,6 @@
 
 - name: check if alertmanager is accessible
   uri:
-    url: http://localhost:9093
+    url: http://65.2.81.122:9093
     method: GET
     status_code: 200
