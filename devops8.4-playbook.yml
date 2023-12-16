@@ -1,0 +1,15 @@
+---
+- name: check multiple attributes of target system
+  hosts: all
+  become: true
+  tasks:
+    - name: check multiple attributes
+      shell: |
+        hostname
+        uptime
+        date
+        ifconfig
+      register: checkdata
+    - name: debug message
+      debug:
+        var: checkdata
