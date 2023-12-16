@@ -1,0 +1,6 @@
+---
+- name: role usage example
+  hosts: all
+  become: true
+  roles:
+    - demorole
