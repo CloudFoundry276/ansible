@@ -2,3 +2,8 @@
   dnf:
     name: httpd.x86_64
     state: latest
+- name: Enable & Start Apache
+  service:
+    name: httpd
+    enabled: true
+    state: started
