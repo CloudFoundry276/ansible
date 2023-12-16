@@ -1,5 +1,0 @@
----
-# handlers file for alert_manager
-- name: reload systemd
-  command: systemctl daemon-reload
-  listen: systemd_reload
