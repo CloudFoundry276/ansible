@@ -1,0 +1,4 @@
+- name: install apache
+  dnf:
+    name: httpd.x86_64
+    state: latest
