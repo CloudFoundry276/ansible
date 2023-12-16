@@ -20,7 +20,7 @@ ansible -i inventory all -a hostname
 ----------------------------------------------------------------------------------------------
 
 To create ansible role(s)
-ansible-galaxt init rolename
+ansible-galaxy init rolename
 
 -----------------------------------------------------------------------------------------------
 
