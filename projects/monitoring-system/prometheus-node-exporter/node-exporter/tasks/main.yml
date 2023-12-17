@@ -29,9 +29,9 @@
     - node_exporter
 
 - name: removing the tar file from node-exporter
-   file:
-     path: "{{ node_exporter_download_dir }}"
-     state: absent
+  file:
+    path: "{{ node_exporter_download_dir }}"
+    state: absent
 
 - name: create prometheus systemd service file
   template:
