@@ -27,7 +27,8 @@
     mode: '0775'
   with_items:
     - node_exporter
- - name: removing the tar file from node-exporter
+
+- name: removing the tar file from node-exporter
    file:
      path: "{{ node_exporter_download_dir }}"
      state: absent

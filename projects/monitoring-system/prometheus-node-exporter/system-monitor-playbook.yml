@@ -5,4 +5,4 @@
   gather_facts: yes
   roles:
     - prometheus
-    - node-ecporter
+    - node-exporter
