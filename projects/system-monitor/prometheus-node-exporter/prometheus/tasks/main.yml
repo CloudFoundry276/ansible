@@ -1,7 +1,7 @@
 ---
 # tasks file for prometheus
 - name: update linux system
-      command: sudo dnf update
+  command: sudo dnf update
 
 - name: create user for prometheus
   user:
