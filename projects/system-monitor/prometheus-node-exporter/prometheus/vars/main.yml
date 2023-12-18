@@ -1,2 +1,8 @@
 ---
 # vars file for prometheus
+prometheus_user: prometheus
+prometheus_dest_dir: /etc/prometheus
+prometheus_data_dir: /var/lib/prometheus
+service_dest_dir: /etc/systemd/system
+prometheus_download_dir: /tmp/prometheus-2.48.1.linux-amd64
+prometheus_download_url: https://github.com/prometheus/prometheus/releases/download/v2.48.1/prometheus-2.48.1.linux-amd64.tar.gz
