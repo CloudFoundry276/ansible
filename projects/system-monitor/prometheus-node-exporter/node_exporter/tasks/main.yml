@@ -1,2 +1,40 @@
 ---
 # tasks file for node_exporter
+- name: create user for node ecporter
+  user:
+    name: "{{ node_exporter_user }}"
+    state: present
+    createhome: no
+    shell: /usr/sbin/nologin
+    append: yes
+  become: true
+
+- name: download & unarchive packages for node exporter
+  unarchive:
+    src: "{{ node_exporter_download_url }}"
+    dest: /tmp
+    owner: "{{ node_exporter_user }}"
+    group: "{{ node_exporter_user }}"
+    remote_src: yes
+    creates: "{{ node_exporter_download_dir }}"
+
+- name: copying the service binary for node exporter
+  copy:
+    src: "{{ node_exporter_download_dir }}/"
+    dest: /usr/local/bin/
+    owner: "{{ node_exporter_user }}"
+    group: "{{ node_exporter_user }}"
+    remotr_src: yes
+    mode: '0775'
+  with_items:
+    - node_exporter
+
+- name: removing the tar file of node exporter
+  file:
+    path: "{{ node_exporter_download_dir }}"
+    state: absent
+
+- name: create prometheus node exporter systemd service file
+  template:
+    src: templates/node-exporter.service.j2
+    dest: "{{ service_dest_dir }}/node-exporter.service"
