@@ -18,7 +18,6 @@
     state: directory
     owner: "{{ prometheus_user }}"
     group: "{{ prometheus_user }}"
-    remote_src: yes
     mode: '0775'
     recurse: yes
 
@@ -28,7 +27,6 @@
     state: directory
     owner: "{{ prometheus_user }}"
     group: "{{ prometheus_user }}"
-    remote_src: yes
     mode: '0775'
     recurse: yes
 
