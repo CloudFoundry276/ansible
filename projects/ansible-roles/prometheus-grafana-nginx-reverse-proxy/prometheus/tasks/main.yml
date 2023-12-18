@@ -1,6 +1,13 @@
 ---
 # tasks file for prometheus
-- include: create_user.yml
-- include: install.yml
-- include: configure.yml
-- include: prometheus_status.yml
+- name: create user yml
+  include_tasks: create_user.yml
+
+- name: install yml
+  include_tasks: install.yml
+
+- name: configure yml
+  include_tasks: configure.yml
+
+- name: prometheus status yml
+  include_tasks: prometheus_status.yml
