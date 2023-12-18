@@ -1,5 +1,8 @@
 ---
 # tasks file for node_exporter
+- name: update linux system
+      command: sudo dnf update
+
 - name: create user for node ecporter
   user:
     name: "{{ node_exporter_user }}"
