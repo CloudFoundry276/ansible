@@ -1,8 +1,0 @@
----
-- name: monitor system using prometheus & node exporter
-  hosts: all
-  become: true
-  gather_facts: yes
-  roles:
-    - prometheus
-    - node_exporter
