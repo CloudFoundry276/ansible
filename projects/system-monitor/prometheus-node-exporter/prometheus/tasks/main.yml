@@ -79,7 +79,6 @@
     dest: "{{ prometheus_dest_dir }}/prometheus.yml"
     owner: "{{ prometheus_user }}"
     group: "{{ prometheus_user }}"
-    remote_src: yes
     mode: '0775'
   notify:
     - restart node-exporter
