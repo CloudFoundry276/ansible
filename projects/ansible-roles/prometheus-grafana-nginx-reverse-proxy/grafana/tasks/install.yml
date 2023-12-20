@@ -6,6 +6,7 @@
 - name: add grafana rpm repository
   yum_repository:
     name: grafana
+    description: grafana yum repo
     baseurl: https://packages.grafana.com/oss/rpm
     state: present
 
