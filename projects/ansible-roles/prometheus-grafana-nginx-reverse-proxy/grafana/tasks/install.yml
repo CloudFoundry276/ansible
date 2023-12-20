@@ -4,8 +4,8 @@
     url: https://packages.grafana.com/gpg.key
 
 - name: add grafana rpm repository
-  rpm_repository:
-    repo: https://packages.grafana.com/oss/rpm
+  get_url:
+    url: https://packages.grafana.com/oss/rpm
     state: present
     filename: "{{ service }}"
 
