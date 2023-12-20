@@ -1,13 +1,11 @@
 ---
 - name: add rpm key for grafana
-  get_url:
+  rpm_key:
     url: https://packages.grafana.com/gpg.key
-    dest: /usr/share/keyrings/grafana.key
 
 - name: add grafana rpm repository
-  get_url:
-    url: https://packages.grafana.com/oss/rpm
-    dest: /etc/yum.repos.d/grafana.repo
+  yum_repository:
+    repo: rpm https://packages.grafana.com/oss/rpm stable main
     state: present
     filename: "{{ service }}"
 
