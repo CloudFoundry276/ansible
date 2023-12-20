@@ -8,7 +8,6 @@
     name: grafana
     repo: rpm https://packages.grafana.com/oss/rpm stable main
     state: present
-    filename: "{{ service }}"
 
 - name: update yum cache
   yum:
