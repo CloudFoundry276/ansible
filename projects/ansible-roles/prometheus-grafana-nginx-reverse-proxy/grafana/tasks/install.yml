@@ -1,6 +1,6 @@
 ---
 - name: add rpm key for grafana
-  rpm_key:
+  get_url:
     url: https://packages.grafana.com/gpg.key
 
 - name: add grafana rpm repository
